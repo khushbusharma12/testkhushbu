@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Calibri, sans-serif;
+      }
+
+      .container {
+        margin: 16px;
+        overflow: hidden;
+      }
+
+      .intro {
+        padding: 5% 10%;
+        text-align: left;
+        font-size: large;
+      }
+
+      input[type="text"] {
+        width: 40%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      .accordion {
+        background-color: #eee;
+        color: #444;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        transition: 0.4s;
+      }
+
+      .active,
+      .accordion:hover {
+        background-color: #ccc;
+      }
+
+      .submit {
+        cursor: pointer;
+      }
+
+      .panel {
+        padding: 0 18px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+      }
+
+      .headingLabel {
+        padding: 10px;
+        display: inline-block;
+        width: 25%;
+      }
+
+      #textarea {
+        padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="intro">
+      This portal is the easiest and most direct way to submit your user change
+      requests to the Platts sales team. Once submitted, your user change
+      request will be automatically routed to the appropriate Platts sales
+      representative and followed up on as soon as possible.
+      <br /><br />
+      We ask that you please provide as much information as you can about the
+      user so that our sales team can approach them with the proper mix of
+      services and information.If you need assistance, please contact the Platts
+      Channel Team at <a href="#"> partners@spglobal.com </a> or
+      <a href="#"> 212-904-4366 </a>
+    </p>
+    <div class="container">
+      <form
+        action="https://manasagowri-dev-ed.my.salesforce.com//servlet/servlet.WebToCase?encoding=UTF-8"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="captcha_settings"
+          value='{"keyname":"Non_Bloomberg","fallback":"true","orgId":"00D6F000002WeYP","ts":""}'
+        />
+
+        <input type="hidden" name="orgid" value="00D6F000002WeYP" />
+
+        <input type="hidden" name="retURL" value="http://google.com" />
+
+        <label for="00N7Y000008PhLU" class="headingLabel" style="width: 170px">
+          <b>Type of Change Request</b></label
+        >
+        <select
+          id="00N7Y000008PhLU"
+          onchange="userReq(event)"
+          name="00N7Y000008PhLU"
+          title="Type of Change Request"
+          style="margin-bottom: 20px"
+        >
+          <option value="">--None--</option>
+
+          <option value="Add User">Add User</option>
+
+          <option value="Remove User">Remove User</option>
+
+          <option value="User Swap">User Swap</option></select
+        ><br />
+
+        <div class="accordion" id="1"><b>Add User Request </b></div>
+        <div class="panel" id="11">
+          <label for="00N7Y000008PhNB" class="headingLabel">Name of User</label>
+
+          <input
+            type="text"
+            id="00N7Y000008PhNB"
+            name="00N7Y000008PhNB"
+            placeholder=" Enter User's Name"
+            maxlength="40"
+          /><br />
+
+          <label for="00N7Y000008PhNG" class="headingLabel"
+            >Email Address</label
+          >
+
+          <input
+            type="text"
+            id="00N7Y000008PhNG"
+            name="00N7Y000008PhNG"
+            placeholder="Enter Email Address"
+            maxlength="40"
+          /><br />
+
+          <label for="00N7Y000008Pl2M" class="headingLabel"
+            >Office Location</label
+          >
+
+          <textarea
+            type="text"
+            id="00N7Y000008Pl2M"
+            name="00N7Y000008Pl2M"
+            cols="65"
+            rows="5"
+            placeholder="Enter User's Office Location"
+          ></textarea><br />
+
+          <label for="00N7Y000008PhNL" class="headingLabel"
+            >Product/Service</label
+          >
+
+          <textarea
+            type="text"
+            id="00N7Y000008PhNL"
+            name="00N7Y000008PhNL"
+            required
+            cols="65"
+            rows="5"
+            placeholder="Enter the Product/Service"
+          ></textarea><br />
+
+          <label for="00N7Y000008PhNQ" class="headingLabel">User ID</label>
+          <input
+            type="text"
+            id="00N7Y000008PhNQ"
+            name="00N7Y000008PhNQ"
+            placeholder=" Enter User's ID"
+            maxlength="40"
+          /><br />
+        </div>
+
+        <div class="accordion" id="2"><b>Remove User Request </b></div>
+
+        <div class="panel" id="22">
+          <label for="00N7Y000008PhNB" class="headingLabel">Name of User</label>
+
+          <input
+            type="text"
+            id="00N7Y000008PhNB"
+            name="00N7Y000008PhNB"
+            placeholder=" Enter User's Name"
+            maxlength="40"
+          /><br />
+
+          <label for="00N7Y000008PhNG" class="headingLabel"
+            >Email Address</label
+          >
+
+          <input
+            type="text"
+            id="00N7Y000008PhNG"
+            name="00N7Y000008PhNG"
+            placeholder="Enter Email Address"
+            maxlength="40"
+          /><br />
+
+          <label for="00N7Y000008Pl2M" class="headingLabel"
+            >Office Location</label
+          >
+
+          <textarea
+            type="text"
+            id="00N7Y000008Pl2M"
+            name="00N7Y000008Pl2M"
+            cols="65"
+            rows="5"
+            placeholder="Enter User's Office Location"
+          ></textarea><br />
+
+          <label for="00N7Y000008PhNL" class="headingLabel"
+            >Product/Service</label
+          >
+
+          <textarea
+            type="text"
+            id="00N7Y000008PhNL"
+            name="00N7Y000008PhNL"
+            required
+            cols="65"
+            rows="5"
+            placeholder="Enter the Product/Service"
+          ></textarea><br />
+
+          <label for="00N7Y000008PhNQ" class="headingLabel">User ID</label>
+
+          <input
+            type="text"
+            id="00N7Y000008PhNQ"
+            name="00N7Y000008PhNQ"
+            placeholder=" Enter User's ID"
+            maxlength="40"
+          /><br />
+        </div>
+
+        <div class="accordion" id="3"><b>User Swap Request </b></div>
+
+        <div class="panel" id="33">
+          <label for="00N7Y000008PhNV" class="headingLabel">
+            Name of OLD User</label
+          >
+
+          <input
+            type="text"
+            id="00N7Y000008PhNV"
+            name="00N7Y000008PhNV"
+            placeholder=" Enter Old User's Name"
+            maxlength="40"
+          /><br />
+
+          <label for="00N7Y000008PhNa" class="headingLabel">
+            Email Address of OLD User</label
+          >
+
+          <input
+            type="text"
+            id="00N7Y000008PhNa"
+            name="00N7Y000008PhNa"
+            placeholder=" Enter Old User's Email Address"
+            maxlength="40"
+          /><br />
+
+          <label for="00N7Y000008PhNf" class="headingLabel">
+            User ID of OLD User</label
+          >
+
+          <input
+            type="text"
+            id="00N7Y000008PhNf"
+            name="00N7Y000008PhNf"
+            placeholder=" Enter Old User's ID"
+            maxlength="40"
+          /><br />
+
+          <label for="00N7Y000008PhNk" class="headingLabel"
+            >Office Location of OLD User</label
+          >
+
+          <textarea
+            type="text"
+            id="00N7Y000008PhNk"
+            name="00N7Y000008PhNk"
+            placeholder=" Enter Old User's Office Location"
+            cols="65"
+            rows="5"
+          ></textarea><br />
+
+          <label for="00N7Y000008PhNB" class="headingLabel">Name of User</label>
+
+          <input
+            type="text"
+            id="00N7Y000008PhNB"
+            name="00N7Y000008PhNB"
+            placeholder=" Enter New User's Name"
+            maxlength="40"
+          /><br />
+
+          <label for="00N7Y000008PhNG" class="headingLabel"
+            >Email Address</label
+          >
+
+          <input
+            type="text"
+            id="00N7Y000008PhNG"
+            name="00N7Y000008PhNG"
+            placeholder="Enter New User's Email Address"
+            maxlength="40"
+          /><br />
+
+          <label for="00N7Y000008Pl2M" class="headingLabel"
+            >Office Location</label
+          >
+
+          <textarea
+            type="text"
+            id="00N7Y000008Pl2M"
+            name="00N7Y000008Pl2M"
+            placeholder=" Enter New User's Office Location"
+            cols="65"
+            rows="5"
+          ></textarea><br />
+
+          <label for="00N7Y000008PhNQ" class="headingLabel">User ID</label>
+
+          <input
+            type="text"
+            id="00N7Y000008PhNQ"
+            name="00N7Y000008PhNQ"
+            placeholder=" Enter New User's ID"
+            maxlength="40"
+          /><br />
+        </div>
+        <input type="hidden" id="external" name="external" value="1" /><br />
+        <div
+          class="g-recaptcha"
+          data-sitekey="6Len308bAAAAABzB5ML661TUhUHVDdGGJB0E9WL3"
+        ></div>
+        <br />
+        <div style="width: 100vw; text-align: center">
+          <input
+            class="submit"
+            type="submit"
+            name="submit"
+            style="
+              width: 200px;
+              height: 30px;
+              background: #04aa6d;
+              color: white;
+              border: #04aa6d;
+            "
+          />
+        </div>
+      </form>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function timestamp() {
+        var response = document.getElementById("g-recaptcha-response");
+
+        if (response == null || response.value.trim() == "") {
+          var elems = JSON.parse(
+            document.getElementsByName("captcha_settings")[0].value
+          );
+
+          elems["ts"] = JSON.stringify(new Date().getTime());
+
+          document.getElementsByName("captcha_settings")[0].value =
+            JSON.stringify(elems);
+        }
+      }
+
+      setInterval(timestamp, 500);
+
+      function userReq(evt) {
+        // Declare all variables
+        var i, accordionContent, panelContent, CRType;
+        CRType = document.getElementById("00N7Y000008PhLU").value;
+        // Get all elements with class="accordionContent" and hide them
+        accordionContent = document.getElementsByClassName("accordion");
+        for (i = 0; i < accordionContent.length; i++) {
+          accordionContent[i].style.display = "none";
+        }
+        panelContent = document.getElementsByClassName("panel");
+        for (i = 0; i < panelContent.length; i++) {
+          panelContent[i].style.display = "none";
+        }
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        console.log(CRType);
+        if (CRType === "Add User") {
+          document.getElementById("1").style.display = "block";
+          document.getElementById("11").style.display = "block";
+        } else if (CRType === "Remove User") {
+          document.getElementById("2").style.display = "block";
+          document.getElementById("22").style.display = "block";
+        } else if (CRType === "User Swap") {
+          document.getElementById("3").style.display = "block";
+          document.getElementById("33").style.display = "block";
+        }
+        else {
+          document.getElementById("1").style.display = "block";
+          document.getElementById("2").style.display = "block";
+          document.getElementById("3").style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
