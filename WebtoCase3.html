@@ -1,0 +1,61 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+<form action="https://platts--pltyoda.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+<input type=hidden name="orgid" value="00D3E000000BAag">
+<input type=hidden name="retURL" value="http://google.com">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="khushbu.sood@spglobal.com">                                      -->
+<!--  ----------------------------------------------------------------------  -->
+
+<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+
+<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+
+<label for="description">Description</label><textarea name="description"></textarea><br>
+
+Change Request:<select  id="00N7Y000008OheP" name="00N7Y000008OheP" title="Change Request"><option value="">--None--</option><option value="Add">Add</option>
+<option value="Remove">Remove</option>
+<option value="Swap">Swap</option>
+</select><br>
+
+Issue Category:<select  id="00N1o00000JN2rt" name="00N1o00000JN2rt" title="Issue Category"><option value="">--None--</option><option value="Account">Account</option>
+<option value="Contacts">Contacts</option>
+<option value="Data Management">Data Management</option>
+<option value="Fulfillment">Fulfillment</option>
+<option value="Invoices">Invoices</option>
+<option value="Leads">Leads</option>
+<option value="Office Location">Office Location</option>
+<option value="Opportunities">Opportunities</option>
+<option value="Other">Other</option>
+<option value="Quotes">Quotes</option>
+<option value="SFDC User Requests">SFDC User Requests</option>
+<option value="SpringCM - Missing Info on SA">SpringCM - Missing Info on SA</option>
+<option value="Subscriptions">Subscriptions</option>
+<option value="Unable to Add New Users to Subscription">Unable to Add New Users to Subscription</option>
+</select><br>
+
+<input type="hidden"  id="external" name="external" value="1" /><br>
+
+<input type="submit" name="submit">
+
+</form>
